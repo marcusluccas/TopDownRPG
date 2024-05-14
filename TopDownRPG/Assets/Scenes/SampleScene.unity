@@ -1674,10 +1674,10 @@ MonoBehaviour:
   InvSlot: {fileID: 8102500767300616832, guid: 0609a1468e0019a46950cd6b4e5bd1ed, type: 3}
   Inventory:
   - {fileID: 11400000, guid: fd87bda7c0af78d41a2174d198e79e6e, type: 2}
-  - {fileID: 11400000, guid: fd87bda7c0af78d41a2174d198e79e6e, type: 2}
-  - {fileID: 11400000, guid: 6c4ee429f80c67143b2b150c57dc521c, type: 2}
   - {fileID: 11400000, guid: 1c78026f17bdf0842a0c10b6e74eb9cf, type: 2}
-  - {fileID: 11400000, guid: 1c78026f17bdf0842a0c10b6e74eb9cf, type: 2}
+  - {fileID: 11400000, guid: f2595612333bba94d86cccc472a0c997, type: 2}
+  - {fileID: 11400000, guid: 68b9997d40ccbd44ab4069b1ed1c8d67, type: 2}
+  - {fileID: 11400000, guid: d1d603b36a9b0eb438520b59c0eb04f8, type: 2}
   goldCoins: 10
   goldText: {fileID: 1207985973}
 --- !u!4 &1965285194

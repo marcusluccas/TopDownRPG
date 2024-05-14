@@ -60,10 +60,20 @@ public class InventoryManager : MonoBehaviour
 
         foreach (Weapon w in Inventory) {
             GameObject slot = Instantiate(InvSlot, InvBackground.transform);
-            slot.GetComponentInChildren<Image>().sprite = w.weaponIcon;
-            slot.GetComponentInChildren<Outline>().enabled = false;
 
-            if (selectSlot == hotKey) slot.GetComponentInChildren<Outline>().enabled = true;
+            if (w == null)
+            {
+                slot.GetComponentInChildren<Image>().enabled = false;
+                slot.GetComponentInChildren<Outline>().enabled = false;
+            }
+            else
+            {
+                slot.GetComponentInChildren<Image>().enabled = true;
+                slot.GetComponentInChildren<Image>().sprite = w.weaponIcon;
+                slot.GetComponentInChildren<Outline>().enabled = false;
+
+                if (selectSlot == hotKey) slot.GetComponentInChildren<Outline>().enabled = true;
+            }
 
             slot.GetComponentInChildren<Text>().text = hotKey.ToString();
             hotKey++;
@@ -73,9 +83,12 @@ public class InventoryManager : MonoBehaviour
     void SelectWeapon(int hotKey)
     {
         Weapon selectWeapon = Inventory[hotKey - 1];
-        playerStats.atackDemage = selectWeapon.weaponDemage;
-        playerStats.atackSpeed = selectWeapon.weaponSpeed;
-        playerStats.atackRange = selectWeapon.weaponRange;
+        if (selectWeapon != null)
+        {
+            playerStats.atackDemage = selectWeapon.weaponDemage;
+            playerStats.atackSpeed = selectWeapon.weaponSpeed;
+            playerStats.atackRange = selectWeapon.weaponRange;
+        }
 
         selectSlot = hotKey;
         Refresh();
