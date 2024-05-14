@@ -10,6 +10,7 @@ public class EntityStats : MonoBehaviour
     public float atackDemage;
     public float atackSpeed;
     public float atackRange;
+    public int goldCarry;
 
     private void Start()
     {
@@ -25,6 +26,11 @@ public class EntityStats : MonoBehaviour
     {
         if (hp <= 0)
         {
+            if (this.gameObject.tag != "Player")
+            {
+                InventoryManager.Instance.AddGold(goldCarry);
+            }
+
             Destroy(this.gameObject);
         }
     }

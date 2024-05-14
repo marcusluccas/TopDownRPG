@@ -16,6 +16,11 @@ public class InventoryManager : MonoBehaviour
 
     int selectSlot = 0;
 
+    //Gold Manager
+
+    public int goldCoins;
+    public Text goldText;
+
     void Awake()
     {
         if (Instance != null && Instance != this) {
@@ -42,6 +47,8 @@ public class InventoryManager : MonoBehaviour
 
     void Refresh()
     {
+        goldText.text = goldCoins.ToString();
+
         GameObject[] slots = GameObject.FindGameObjectsWithTag("Slot");
 
         foreach (GameObject slot in slots)
@@ -101,5 +108,11 @@ public class InventoryManager : MonoBehaviour
             SelectWeapon(5);
         }
 
+    }
+
+    public void AddGold(int gold)
+    {
+        goldCoins += gold;
+        Refresh();
     }
 }

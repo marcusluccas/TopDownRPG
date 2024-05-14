@@ -105,6 +105,7 @@ MonoBehaviour:
   atackDemage: 2
   atackSpeed: 1
   atackRange: 0
+  goldCarry: 10
 --- !u!50 &6174414913151039351
 Rigidbody2D:
   serializedVersion: 4
