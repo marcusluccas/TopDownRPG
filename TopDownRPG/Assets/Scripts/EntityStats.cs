@@ -9,6 +9,7 @@ public class EntityStats : MonoBehaviour
     public float baseSpeed;
     public float atackDemage;
     public float atackSpeed;
+    public float atackRange;
 
     private void Start()
     {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    [SerializeField] Slider myHpBar;
+    public Slider myHpBar;
     PlayerController player;
 
     // Start is called before the first frame update

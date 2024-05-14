@@ -6,7 +6,7 @@ public class PlayerController : EntityStats
 {
     float speed;
     Rigidbody2D myRB;
-    [SerializeField] GameObject myProjectile;
+    public GameObject myProjectile;
     float timer;
     bool canAtack;
 
@@ -50,7 +50,7 @@ public class PlayerController : EntityStats
             Vector2 directionProjectile = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             directionProjectile.Normalize();
 
-            projectile.GetComponent<Rigidbody2D>().AddForce(directionProjectile * 10, ForceMode2D.Impulse);
+            projectile.GetComponent<Rigidbody2D>().AddForce(directionProjectile * atackRange, ForceMode2D.Impulse);
             projectile.GetComponent<ProjectileDemage>().demage = atackDemage;
 
             canAtack = false;
