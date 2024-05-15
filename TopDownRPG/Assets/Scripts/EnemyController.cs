@@ -30,7 +30,7 @@ public class EnemyController : EntityStats
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerController>().hp -= atackDemage;
+            collision.gameObject.GetComponent<PlayerController>().RemoveHP(attackDemage);
             hp -= maxHp;
         }
     }

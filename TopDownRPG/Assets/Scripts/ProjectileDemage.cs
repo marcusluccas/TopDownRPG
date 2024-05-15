@@ -5,11 +5,13 @@ using UnityEngine;
 public class ProjectileDemage : MonoBehaviour
 {
     public float demage;
+    public float life = 1;
+    public bool isPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, life);
     }
 
     // Update is called once per frame
@@ -20,9 +22,13 @@ public class ProjectileDemage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if ((isPlayer == true && collision.gameObject.tag == "Enemy") || (isPlayer == false && collision.gameObject.tag == "Player"))
         {
-            collision.gameObject.GetComponent<EnemyController>().hp -= demage;
+            collision.gameObject.GetComponent<EntityStats>().RemoveHP(demage);
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.tag == "Wall")
+        {
             Destroy(this.gameObject);
         }
     }

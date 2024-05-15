@@ -85,9 +85,10 @@ public class InventoryManager : MonoBehaviour
         Weapon selectWeapon = Inventory[hotKey - 1];
         if (selectWeapon != null)
         {
-            playerStats.atackDemage = selectWeapon.weaponDemage;
-            playerStats.atackSpeed = selectWeapon.weaponSpeed;
-            playerStats.atackRange = selectWeapon.weaponRange;
+            playerStats.attackDemage = selectWeapon.weaponDemage;
+            playerStats.attackSpeed = selectWeapon.weaponSpeed;
+            playerStats.attackRange = selectWeapon.weaponRange;
+            playerStats.attackLife = selectWeapon.weaponLife;
         }
 
         selectSlot = hotKey;

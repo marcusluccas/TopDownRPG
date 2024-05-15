@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   demage: 0
+  isPlayer: 1
 --- !u!50 &2873346451362756368
 Rigidbody2D:
   serializedVersion: 4

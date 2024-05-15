@@ -2,52 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : EntityStats
+public class RangedController : EntityStats
 {
-    float speed;
-    Rigidbody2D myRB;
     public GameObject myProjectile;
-    float timer;
     bool canAttack;
+    float timer;
+
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = baseSpeed;
-        myRB = GetComponent<Rigidbody2D>();
-        speed = baseSpeed;
-        hp = maxHp;
         timer = attackSpeed;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        Move();
-    }
-
     void Update()
     {
-        Shot();
-    }
-
-    void Move()
-    {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        Vector2 move = new Vector2(horizontal, vertical);
-        move.Normalize();
-
-        myRB.velocity = move * speed;
+        Shot();   
     }
 
     void Shot()
     {
-        if (Input.GetMouseButton(0) && canAttack)
+        if (canAttack)
         {
             GameObject projectile = Instantiate(myProjectile, transform.position, Quaternion.identity);
-            Vector2 directionProjectile = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            Vector2 directionProjectile = player.transform.position - transform.position;
             directionProjectile.Normalize();
 
             projectile.GetComponent<Rigidbody2D>().AddForce(directionProjectile * attackRange, ForceMode2D.Impulse);
@@ -59,11 +40,6 @@ public class PlayerController : EntityStats
         }
 
         Cooldown();
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            InventoryManager.Instance.DiscardItem();
-        }
     }
 
     void Cooldown()

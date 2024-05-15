@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDemage: 2
   weaponSpeed: 2
-  weaponRange: 10
+  weaponRange: 15
+  weaponLife: 4
   weaponIcon: {fileID: -1293147917, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
   weaponName: Staff
   weaponValue: 5

@@ -8,6 +8,7 @@ public class Weapon : ScriptableObject
     public float weaponDemage;
     public float weaponSpeed;
     public float weaponRange;
+    public float weaponLife;
     public Sprite weaponIcon;
     public string weaponName;
     public int weaponValue;

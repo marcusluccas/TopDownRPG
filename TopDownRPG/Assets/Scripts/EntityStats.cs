@@ -7,9 +7,10 @@ public class EntityStats : MonoBehaviour
     public float maxHp;
     public float hp;
     public float baseSpeed;
-    public float atackDemage;
-    public float atackSpeed;
-    public float atackRange;
+    public float attackDemage;
+    public float attackSpeed;
+    public float attackRange;
+    public float attackLife;
     public int goldCarry;
 
     private void Start()
@@ -19,7 +20,7 @@ public class EntityStats : MonoBehaviour
 
     private void Update()
     {
-        Death();
+        
     }
 
     void Death()
@@ -33,5 +34,11 @@ public class EntityStats : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+    }
+
+    public void RemoveHP(float demage)
+    {
+        hp -= demage;
+        Death();
     }
 }
