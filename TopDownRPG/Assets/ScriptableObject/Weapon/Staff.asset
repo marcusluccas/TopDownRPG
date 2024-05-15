@@ -16,3 +16,5 @@ MonoBehaviour:
   weaponSpeed: 2
   weaponRange: 10
   weaponIcon: {fileID: -1293147917, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
+  weaponName: Staff
+  weaponValue: 5

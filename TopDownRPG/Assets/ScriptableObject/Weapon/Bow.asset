@@ -16,3 +16,5 @@ MonoBehaviour:
   weaponSpeed: 1
   weaponRange: 20
   weaponIcon: {fileID: 1673553722, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
+  weaponName: Bow
+  weaponValue: 10

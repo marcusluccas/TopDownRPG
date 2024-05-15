@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Slot
+  - ShopItem
   layers:
   - Default
   - TransparentFX

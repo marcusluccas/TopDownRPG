@@ -58,6 +58,11 @@ public class PlayerController : EntityStats
         }
 
         Cooldown();
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            InventoryManager.Instance.DiscardItem();
+        }
     }
 
     void Cooldown()

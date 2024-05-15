@@ -128,4 +128,14 @@ public class InventoryManager : MonoBehaviour
         goldCoins += gold;
         Refresh();
     }
+
+    public void DiscardItem()
+    {
+        if (selectSlot -1 != 0)
+        {
+            Inventory[selectSlot -1] = null;
+            SelectWeapon(1);
+            Refresh();
+        }
+    }
 }

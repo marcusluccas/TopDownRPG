@@ -16,3 +16,5 @@ MonoBehaviour:
   weaponSpeed: 4
   weaponRange: 0.2
   weaponIcon: {fileID: 1727383150, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
+  weaponName: Hammer
+  weaponValue: 20
