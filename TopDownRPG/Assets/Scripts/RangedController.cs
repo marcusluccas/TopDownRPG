@@ -13,7 +13,7 @@ public class RangedController : EntityStats
     // Start is called before the first frame update
     void Start()
     {
-        timer = attackSpeed;
+        hp = maxHp;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 

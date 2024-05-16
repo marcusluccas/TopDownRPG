@@ -13,6 +13,9 @@ public class EntityStats : MonoBehaviour
     public float attackLife;
     public int goldCarry;
 
+    //Apenas os enemies
+    public SpawnManager spawnManager;
+
     private void Start()
     {
 
@@ -30,6 +33,11 @@ public class EntityStats : MonoBehaviour
             if (this.gameObject.tag != "Player")
             {
                 InventoryManager.Instance.AddGold(goldCarry);
+            }
+
+            if (this.gameObject.tag == "Enemy")
+            {
+                spawnManager.enemiesAlive--;
             }
 
             Destroy(this.gameObject);
