@@ -108,6 +108,10 @@ MonoBehaviour:
   attackLife: 0
   goldCarry: 10
   spawnManager: {fileID: 0}
+  level: 1
+  bonusAttackDemage: 0
+  bonusAttackSpeed: 0
+  exp: 20
 --- !u!50 &6174414913151039351
 Rigidbody2D:
   serializedVersion: 4

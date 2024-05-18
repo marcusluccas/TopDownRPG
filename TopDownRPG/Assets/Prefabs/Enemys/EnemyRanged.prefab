@@ -180,4 +180,6 @@ MonoBehaviour:
   attackLife: 5
   goldCarry: 20
   spawnManager: {fileID: 0}
+  level: 1
+  exp: 30
   myProjectile: {fileID: 4252753374869307469, guid: 96f2ce9fb4dcdeb45a3d2664a7eb457d, type: 3}

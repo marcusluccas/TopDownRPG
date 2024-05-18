@@ -16,6 +16,13 @@ public class EntityStats : MonoBehaviour
     //Apenas os enemies
     public SpawnManager spawnManager;
 
+    //Apenas o player
+    public int level = 1;
+    public float bonusAttackDemage;
+    public float bonusAttackSpeed;
+
+    public int exp = 0;
+
     private void Start()
     {
 
@@ -33,6 +40,7 @@ public class EntityStats : MonoBehaviour
             if (this.gameObject.tag != "Player")
             {
                 InventoryManager.Instance.AddGold(goldCarry);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().AddExp(exp);
             }
 
             if (this.gameObject.tag == "Enemy")
@@ -48,5 +56,17 @@ public class EntityStats : MonoBehaviour
     {
         hp -= demage;
         Death();
+    }
+
+    public void AddExp(int e)
+    {
+        exp += e;
+
+        if (exp >= level * 100)
+        {
+            HUD.Instance.SetupLevelUpScreen();
+            level++;
+            exp = 0;
+        }
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : EntityStats
 {
-    float speed;
     Rigidbody2D myRB;
     public GameObject myProjectile;
     float timer;
@@ -13,9 +12,7 @@ public class PlayerController : EntityStats
     // Start is called before the first frame update
     void Start()
     {
-        speed = baseSpeed;
         myRB = GetComponent<Rigidbody2D>();
-        speed = baseSpeed;
         hp = maxHp;
         timer = attackSpeed;
     }
@@ -39,7 +36,7 @@ public class PlayerController : EntityStats
         Vector2 move = new Vector2(horizontal, vertical);
         move.Normalize();
 
-        myRB.velocity = move * speed;
+        myRB.velocity = move * baseSpeed;
     }
 
     void Shot()
@@ -51,7 +48,7 @@ public class PlayerController : EntityStats
             directionProjectile.Normalize();
 
             projectile.GetComponent<Rigidbody2D>().AddForce(directionProjectile * attackRange, ForceMode2D.Impulse);
-            projectile.GetComponent<ProjectileDemage>().demage = attackDemage;
+            projectile.GetComponent<ProjectileDemage>().demage = attackDemage * ((bonusAttackDemage + 100)/100);
             projectile.GetComponent<ProjectileDemage>().life = attackLife;
 
             canAttack = false;
@@ -70,7 +67,7 @@ public class PlayerController : EntityStats
     {
         timer += Time.deltaTime;
 
-        if (timer > attackSpeed && !canAttack)
+        if (timer > (attackSpeed - bonusAttackSpeed / 100) && !canAttack)
         {
             canAttack = true;
         }
