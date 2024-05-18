@@ -15,6 +15,8 @@ public class HUD : MonoBehaviour
     public GameObject levelUpScreen;
     public Text[] levelUpScreenValues;
 
+    public GameObject demagePopup;
+
     // Start is called before the first frame update
 
     private void Awake()

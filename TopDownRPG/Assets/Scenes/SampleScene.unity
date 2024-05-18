@@ -3136,6 +3136,7 @@ MonoBehaviour:
   - {fileID: 598049370}
   - {fileID: 1965058592}
   - {fileID: 1944367374}
+  demagePopup: {fileID: 3136373909869133834, guid: ffa3d80d8ac3501419f72c8093a7acf0, type: 3}
 --- !u!4 &1039550768
 Transform:
   m_ObjectHideFlags: 0

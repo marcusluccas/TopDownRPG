@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EntityStats : MonoBehaviour
 {
@@ -54,6 +55,11 @@ public class EntityStats : MonoBehaviour
 
     public void RemoveHP(float demage)
     {
+        GameObject newPopup = Instantiate(HUD.Instance.demagePopup, this.gameObject.transform.position, Quaternion.identity);
+        newPopup.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-2f, 2f), 5), ForceMode2D.Impulse);
+        newPopup.GetComponentInChildren<Text>().text = demage.ToString();
+        Destroy(newPopup, 1);
+
         hp -= demage;
         Death();
     }
