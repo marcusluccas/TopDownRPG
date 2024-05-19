@@ -21,22 +21,10 @@ public class CameraBahaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if ((player.transform.position.x < boundaries[0].position.x || player.transform.position.x > boundaries[1].position.x) && (player.transform.position.y < boundaries[2].position.y || player.transform.position.y > boundaries[3].position.y))
-        {
-            targetTransform = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10);
-        }
-        else if (player.transform.position.x < boundaries[0].position.x || player.transform.position.x > boundaries[1].position.x)
-        {
-            targetTransform = new Vector3(gameObject.transform.position.x, targetObject.transform.position.y, -10f);
-        }
-        else if (player.transform.position.y < boundaries[2].position.y || player.transform.position.y > boundaries[3].position.y)
-        {
-            targetTransform = new Vector3(targetObject.transform.position.x, gameObject.transform.position.y, -10f);
-        }
-        else
-        {
-            targetTransform = new Vector3(targetObject.transform.position.x, targetObject.transform.position.y, -10);
-        }
+        targetTransform = new Vector3(targetObject.transform.position.x, targetObject.transform.position.y, -10);
+
+        targetTransform.x = Mathf.Clamp(targetTransform.x, boundaries[0].position.x, boundaries[1].position.x);
+        targetTransform.y = Mathf.Clamp(targetTransform.y, boundaries[2].position.y, boundaries[3].position.y);
 
         this.transform.position = Vector3.Lerp(this.transform.position, targetTransform, 2f * Time.fixedDeltaTime);
     }

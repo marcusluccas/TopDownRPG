@@ -8,6 +8,7 @@ public class PlayerController : EntityStats
     public GameObject myProjectile;
     float timer;
     bool canAttack;
+    Animator myAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class PlayerController : EntityStats
         myRB = GetComponent<Rigidbody2D>();
         hp = maxHp;
         timer = attackSpeed;
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,24 @@ public class PlayerController : EntityStats
         move.Normalize();
 
         myRB.velocity = move * baseSpeed;
+
+        if (myRB.velocity != Vector2.zero)
+        {
+            if (horizontal < 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            if (horizontal > 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
+
+            myAnimator.Play("Move");
+        }
+        else
+        {
+            myAnimator.Play("Idle");
+        }
     }
 
     void Shot()
