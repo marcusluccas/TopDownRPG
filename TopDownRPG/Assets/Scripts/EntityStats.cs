@@ -24,14 +24,14 @@ public class EntityStats : MonoBehaviour
 
     public int exp = 0;
 
-    private void Start()
+    void Start()
     {
 
     }
 
-    private void Update()
+    void Update()
     {
-        
+        DemageBlink();
     }
 
     void Death()
@@ -41,7 +41,7 @@ public class EntityStats : MonoBehaviour
             if (this.gameObject.tag != "Player")
             {
                 InventoryManager.Instance.AddGold(goldCarry);
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().AddExp(exp);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<EntityStats>().AddExp(exp);
             }
 
             if (this.gameObject.tag == "Enemy")
@@ -60,6 +60,8 @@ public class EntityStats : MonoBehaviour
         newPopup.GetComponentInChildren<Text>().text = demage.ToString();
         Destroy(newPopup, 1);
 
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+
         hp -= demage;
         Death();
     }
@@ -73,6 +75,14 @@ public class EntityStats : MonoBehaviour
             HUD.Instance.SetupLevelUpScreen();
             level++;
             exp = 0;
+        }
+    }
+
+    void DemageBlink()
+    {
+        if (gameObject.GetComponent<SpriteRenderer>().color != Color.white)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(gameObject.GetComponent<SpriteRenderer>().color, Color.white, 10 * Time.deltaTime);
         }
     }
 }

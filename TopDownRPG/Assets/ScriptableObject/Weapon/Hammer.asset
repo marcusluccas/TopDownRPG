@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f1c811cfdacb845834f29450bf40f2, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  weaponDemage: 5
+  weaponDemage: 8
   weaponSpeed: 4
   weaponRange: 1
   weaponLife: 2
   weaponIcon: {fileID: 1727383150, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
   weaponName: Hammer
   weaponValue: 20
+  weaponProject: {fileID: 6000453722439105074, guid: 293d0f0cae5c9b84499d5c3c516f44e8, type: 3}

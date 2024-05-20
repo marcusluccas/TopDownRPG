@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 8635988261672164093}
   - component: {fileID: 3942953579578852049}
   - component: {fileID: 7695794612991108539}
+  - component: {fileID: 3069707094105317059}
   - component: {fileID: 6631502732880176194}
   - component: {fileID: 7287311699025103767}
   m_Layer: 0
@@ -477,6 +478,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3069707094105317059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200096411187232744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d773259448057064e81a7dccc1b4af7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 6
+  hp: 0
+  baseSpeed: 2
+  attackDemage: 1
+  attackSpeed: 2
+  attackRange: 5
+  attackLife: 5
+  goldCarry: 20
+  spawnManager: {fileID: 0}
+  level: 1
+  bonusAttackDemage: 0
+  bonusAttackSpeed: 0
+  exp: 30
 --- !u!114 &6631502732880176194
 MonoBehaviour:
   m_ObjectHideFlags: 0

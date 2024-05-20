@@ -236,6 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2468341301219454085}
   - component: {fileID: 8810566379699926489}
+  - component: {fileID: 593248718400694843}
   - component: {fileID: 869385952993218728}
   - component: {fileID: 6174414913151039351}
   - component: {fileID: 7190964576784636335}
@@ -316,6 +317,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &593248718400694843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7394623434750640617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d773259448057064e81a7dccc1b4af7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 5
+  hp: 0
+  baseSpeed: 1
+  attackDemage: 2
+  attackSpeed: 0
+  attackRange: 0
+  attackLife: 0
+  goldCarry: 10
+  spawnManager: {fileID: 0}
+  level: 1
+  bonusAttackDemage: 0
+  bonusAttackSpeed: 0
+  exp: 20
 --- !u!114 &869385952993218728
 MonoBehaviour:
   m_ObjectHideFlags: 0

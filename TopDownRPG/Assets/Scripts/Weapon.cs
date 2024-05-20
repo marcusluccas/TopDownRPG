@@ -12,4 +12,5 @@ public class Weapon : ScriptableObject
     public Sprite weaponIcon;
     public string weaponName;
     public int weaponValue;
+    public GameObject weaponProject;
 }

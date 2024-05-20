@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedController : EntityStats
+public class RangedController : MonoBehaviour
 {
     public GameObject myProjectile;
     bool canAttack;
     float timer;
+    EntityStats stats;
 
     GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        hp = maxHp;
+        stats = GetComponent<EntityStats>();
+        stats.hp = stats.maxHp;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -31,9 +33,9 @@ public class RangedController : EntityStats
             Vector2 directionProjectile = player.transform.position - transform.position;
             directionProjectile.Normalize();
 
-            projectile.GetComponent<Rigidbody2D>().AddForce(directionProjectile * attackRange, ForceMode2D.Impulse);
-            projectile.GetComponent<ProjectileDemage>().demage = attackDemage;
-            projectile.GetComponent<ProjectileDemage>().life = attackLife;
+            projectile.GetComponent<Rigidbody2D>().AddForce(directionProjectile * stats.attackRange, ForceMode2D.Impulse);
+            projectile.GetComponent<ProjectileDemage>().demage = stats.attackDemage;
+            projectile.GetComponent<ProjectileDemage>().life = stats.attackLife;
 
             canAttack = false;
             timer = 0;
@@ -46,7 +48,7 @@ public class RangedController : EntityStats
     {
         timer += Time.deltaTime;
 
-        if (timer > attackSpeed && !canAttack)
+        if (timer > stats.attackSpeed && !canAttack)
         {
             canAttack = true;
         }

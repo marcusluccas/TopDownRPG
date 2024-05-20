@@ -55,6 +55,7 @@ public class SpawnManager : MonoBehaviour
             if (enemiesAlive <= 0)
             {
                 door.SetActive(false);
+                this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
                 dungeonActive = false;
             }
         }

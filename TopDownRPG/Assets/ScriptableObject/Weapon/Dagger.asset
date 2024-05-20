@@ -19,3 +19,4 @@ MonoBehaviour:
   weaponIcon: {fileID: 899042749, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
   weaponName: Dagger
   weaponValue: 12
+  weaponProject: {fileID: 6000453722439105074, guid: d72d5dd5ae5b3a14091e1effd8c419c4, type: 3}

@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : EntityStats
+public class PlayerController : MonoBehaviour
 {
     Rigidbody2D myRB;
+    float baseSpeed;
+    EntityStats stats;
     public GameObject myProjectile;
     float timer;
     bool canAttack;
@@ -13,9 +15,11 @@ public class PlayerController : EntityStats
     // Start is called before the first frame update
     void Start()
     {
+        stats = GetComponent<EntityStats>();
         myRB = GetComponent<Rigidbody2D>();
-        hp = maxHp;
-        timer = attackSpeed;
+        stats.hp = stats.maxHp;
+        timer = stats.attackSpeed;
+        baseSpeed = stats.baseSpeed;
         myAnimator = GetComponent<Animator>();
     }
 
@@ -67,9 +71,11 @@ public class PlayerController : EntityStats
             Vector2 directionProjectile = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             directionProjectile.Normalize();
 
-            projectile.GetComponent<Rigidbody2D>().AddForce(directionProjectile * attackRange, ForceMode2D.Impulse);
-            projectile.GetComponent<ProjectileDemage>().demage = attackDemage * ((bonusAttackDemage + 100)/100);
-            projectile.GetComponent<ProjectileDemage>().life = attackLife;
+            float degZ = Mathf.Atan2(directionProjectile.y, directionProjectile.x) * Mathf.Rad2Deg;
+            projectile.transform.rotation = Quaternion.Euler(0f, 0f, degZ - 90);
+            projectile.GetComponent<Rigidbody2D>().AddForce(directionProjectile * stats.attackRange, ForceMode2D.Impulse);
+            projectile.GetComponent<ProjectileDemage>().demage = stats.attackDemage * ((stats.bonusAttackDemage + 100)/100);
+            projectile.GetComponent<ProjectileDemage>().life = stats.attackLife;
 
             canAttack = false;
             timer = 0;
@@ -87,7 +93,7 @@ public class PlayerController : EntityStats
     {
         timer += Time.deltaTime;
 
-        if (timer > (attackSpeed - bonusAttackSpeed / 100) && !canAttack)
+        if (timer > (stats.attackSpeed - stats.bonusAttackSpeed / 100) && !canAttack)
         {
             canAttack = true;
         }

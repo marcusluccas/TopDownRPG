@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f1c811cfdacb845834f29450bf40f2, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  weaponDemage: 0.5
+  weaponDemage: 2
   weaponSpeed: 1
   weaponRange: 10
   weaponLife: 5
   weaponIcon: {fileID: 1673553722, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
   weaponName: Bow
   weaponValue: 10
+  weaponProject: {fileID: 6000453722439105074, guid: 2c29cd22426aee34a892ffac9e1a5dc5, type: 3}

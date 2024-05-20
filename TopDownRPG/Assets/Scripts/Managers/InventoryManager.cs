@@ -89,6 +89,7 @@ public class InventoryManager : MonoBehaviour
             playerStats.attackSpeed = selectWeapon.weaponSpeed;
             playerStats.attackRange = selectWeapon.weaponRange;
             playerStats.attackLife = selectWeapon.weaponLife;
+            playerStats.gameObject.GetComponent<PlayerController>().myProjectile = selectWeapon.weaponProject;
         }
 
         selectSlot = hotKey;

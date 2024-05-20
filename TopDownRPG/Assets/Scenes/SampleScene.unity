@@ -1710,6 +1710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664255365}
   - component: {fileID: 664255364}
+  - component: {fileID: 664255369}
   - component: {fileID: 664255363}
   - component: {fileID: 664255367}
   - component: {fileID: 664255366}
@@ -1733,19 +1734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad283ffef10552f4297cbd34b6711072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10
-  hp: 0
-  baseSpeed: 4
-  attackDemage: 0
-  attackSpeed: 0
-  attackRange: 0
-  attackLife: 0
-  goldCarry: 30
-  spawnManager: {fileID: 0}
-  level: 1
-  bonusAttackDemage: 0
-  bonusAttackSpeed: 0
-  exp: 0
   myProjectile: {fileID: 6000453722439105074, guid: d72d5dd5ae5b3a14091e1effd8c419c4, type: 3}
 --- !u!212 &664255364
 SpriteRenderer:
@@ -1908,6 +1896,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &664255369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664255362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d773259448057064e81a7dccc1b4af7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 10
+  hp: 0
+  baseSpeed: 4
+  attackDemage: 0
+  attackSpeed: 0
+  attackRange: 0
+  attackLife: 0
+  goldCarry: 10
+  spawnManager: {fileID: 0}
+  level: 1
+  bonusAttackDemage: 0
+  bonusAttackSpeed: 0
+  exp: 0
 --- !u!1 &676377265
 GameObject:
   m_ObjectHideFlags: 0
@@ -30968,7 +30981,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  goldCoins: 10
+  goldCoins: 50
   goldText: {fileID: 1207985973}
 --- !u!4 &1965285194
 Transform:

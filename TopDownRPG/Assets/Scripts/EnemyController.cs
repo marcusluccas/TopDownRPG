@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : EntityStats
+public class EnemyController : MonoBehaviour
 {
     GameObject player;
-    private float speed;
+    float speed;
+    EntityStats stats;
 
     // Start is called before the first frame update
     void Start()
     {
+        stats = GetComponent<EntityStats>();
         player = GameObject.FindGameObjectWithTag("Player");
-        speed = baseSpeed;
-        hp = maxHp;
+        speed = stats.baseSpeed;
+        stats.hp = stats.maxHp;
     }
 
     // Update is called once per frame
@@ -30,8 +32,8 @@ public class EnemyController : EntityStats
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerController>().RemoveHP(attackDemage);
-            RemoveHP(maxHp);
+            collision.gameObject.GetComponent<EntityStats>().RemoveHP(stats.attackDemage);
+            stats.RemoveHP(stats.maxHp);
         }
     }
 }

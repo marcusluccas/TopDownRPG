@@ -10,7 +10,7 @@ public class HUD : MonoBehaviour
 
     public Slider myHpBar;
     public Slider myExpBar;
-    PlayerController player;
+    EntityStats player;
 
     public GameObject levelUpScreen;
     public Text[] levelUpScreenValues;
@@ -33,7 +33,7 @@ public class HUD : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<EntityStats>();
     }
 
     // Update is called once per frame
