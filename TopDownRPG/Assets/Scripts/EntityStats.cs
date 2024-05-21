@@ -24,6 +24,8 @@ public class EntityStats : MonoBehaviour
 
     public int exp = 0;
 
+    public GameObject deathParticle;
+
     void Start()
     {
 
@@ -49,6 +51,8 @@ public class EntityStats : MonoBehaviour
                 spawnManager.enemiesAlive--;
             }
 
+            Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity);
+
             Destroy(this.gameObject);
         }
     }
@@ -57,7 +61,7 @@ public class EntityStats : MonoBehaviour
     {
         GameObject newPopup = Instantiate(HUD.Instance.demagePopup, this.gameObject.transform.position, Quaternion.identity);
         newPopup.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-2f, 2f), 5), ForceMode2D.Impulse);
-        newPopup.GetComponentInChildren<Text>().text = demage.ToString();
+        newPopup.GetComponentInChildren<Text>().text = Mathf.RoundToInt(demage * 10).ToString();
         Destroy(newPopup, 1);
 
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;

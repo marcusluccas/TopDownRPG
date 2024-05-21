@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D myRB;
-    float baseSpeed;
     EntityStats stats;
     public GameObject myProjectile;
     float timer;
@@ -19,7 +18,6 @@ public class PlayerController : MonoBehaviour
         myRB = GetComponent<Rigidbody2D>();
         stats.hp = stats.maxHp;
         timer = stats.attackSpeed;
-        baseSpeed = stats.baseSpeed;
         myAnimator = GetComponent<Animator>();
     }
 
@@ -42,7 +40,7 @@ public class PlayerController : MonoBehaviour
         Vector2 move = new Vector2(horizontal, vertical);
         move.Normalize();
 
-        myRB.velocity = move * baseSpeed;
+        myRB.velocity = move * stats.baseSpeed;
 
         if (myRB.velocity != Vector2.zero)
         {

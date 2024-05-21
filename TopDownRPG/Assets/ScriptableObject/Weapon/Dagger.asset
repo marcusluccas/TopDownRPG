@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDemage: 0.2
   weaponSpeed: 0.2
-  weaponRange: 2
+  weaponRange: 3
   weaponLife: 1
   weaponIcon: {fileID: 899042749, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
   weaponName: Dagger

@@ -19,4 +19,4 @@ MonoBehaviour:
   weaponIcon: {fileID: 1673553722, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
   weaponName: Bow
   weaponValue: 10
-  weaponProject: {fileID: 6000453722439105074, guid: 2c29cd22426aee34a892ffac9e1a5dc5, type: 3}
+  weaponProject: {fileID: 6000453722439105074, guid: 4676b46aad8f7e8429d0c78d4bd6f9b2, type: 3}

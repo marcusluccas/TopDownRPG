@@ -60,19 +60,19 @@ public class InventoryManager : MonoBehaviour
 
         foreach (Weapon w in Inventory) {
             GameObject slot = Instantiate(InvSlot, InvBackground.transform);
+            Image[] slotIcons = slot.GetComponentsInChildren<Image>();
 
             if (w == null)
             {
-                slot.GetComponentInChildren<Image>().enabled = false;
-                slot.GetComponentInChildren<Outline>().enabled = false;
+                slotIcons[1].GetComponent<Image>().enabled = false;
             }
             else
             {
                 slot.GetComponentInChildren<Image>().enabled = true;
-                slot.GetComponentInChildren<Image>().sprite = w.weaponIcon;
-                slot.GetComponentInChildren<Outline>().enabled = false;
+                slotIcons[1].GetComponent<Image>().sprite = w.weaponIcon;
+                slotIcons[0].GetComponent<Image>().color = Color.white;
 
-                if (selectSlot == hotKey) slot.GetComponentInChildren<Outline>().enabled = true;
+                if (selectSlot == hotKey) slotIcons[0].GetComponent<Image>().color = Color.yellow;
             }
 
             slot.GetComponentInChildren<Text>().text = hotKey.ToString();
