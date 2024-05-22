@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f1c811cfdacb845834f29450bf40f2, type: 3}
   m_Name: Staff
   m_EditorClassIdentifier: 
-  weaponDemage: 3
-  weaponSpeed: 2
+  weaponDemage: 1.6
+  weaponSpeed: 0.6
   weaponRange: 15
   weaponLife: 4
   weaponIcon: {fileID: -1293147917, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
   weaponName: Staff
   weaponValue: 5
   weaponProject: {fileID: 6000453722439105074, guid: d72d5dd5ae5b3a14091e1effd8c419c4, type: 3}
+  weaponSound: {fileID: 8300000, guid: d65bd0015649902429ede7a366142f06, type: 3}
+  weaponSoundPitch: 0.4

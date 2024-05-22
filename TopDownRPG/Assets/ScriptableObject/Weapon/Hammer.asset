@@ -20,3 +20,5 @@ MonoBehaviour:
   weaponName: Hammer
   weaponValue: 20
   weaponProject: {fileID: 6000453722439105074, guid: 293d0f0cae5c9b84499d5c3c516f44e8, type: 3}
+  weaponSound: {fileID: 8300000, guid: d65bd0015649902429ede7a366142f06, type: 3}
+  weaponSoundPitch: 0.1

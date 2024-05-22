@@ -90,6 +90,8 @@ public class InventoryManager : MonoBehaviour
             playerStats.attackRange = selectWeapon.weaponRange;
             playerStats.attackLife = selectWeapon.weaponLife;
             playerStats.gameObject.GetComponent<PlayerController>().myProjectile = selectWeapon.weaponProject;
+            playerStats.gameObject.GetComponent<PlayerController>().weaponSound = selectWeapon.weaponSound;
+            playerStats.gameObject.GetComponent<PlayerController>().weaponPitch = selectWeapon.weaponSoundPitch;
         }
 
         selectSlot = hotKey;

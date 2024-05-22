@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     float timer;
     bool canAttack;
     Animator myAnimator;
+    public AudioSource footstepSound;
+    public AudioSource weaponAudio;
+    public AudioClip weaponSound;
+    public float weaponPitch;
 
     // Start is called before the first frame update
     void Start()
@@ -54,10 +58,12 @@ public class PlayerController : MonoBehaviour
             }
 
             myAnimator.Play("Move");
+            footstepSound.volume = 1;
         }
         else
         {
             myAnimator.Play("Idle");
+            footstepSound.volume = 0;
         }
     }
 
@@ -74,6 +80,9 @@ public class PlayerController : MonoBehaviour
             projectile.GetComponent<Rigidbody2D>().AddForce(directionProjectile * stats.attackRange, ForceMode2D.Impulse);
             projectile.GetComponent<ProjectileDemage>().demage = stats.attackDemage * ((stats.bonusAttackDemage + 100)/100);
             projectile.GetComponent<ProjectileDemage>().life = stats.attackLife;
+
+            weaponAudio.PlayOneShot(weaponSound);
+            weaponAudio.pitch = weaponPitch;
 
             canAttack = false;
             timer = 0;

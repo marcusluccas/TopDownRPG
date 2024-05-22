@@ -20,3 +20,5 @@ MonoBehaviour:
   weaponName: Bow
   weaponValue: 10
   weaponProject: {fileID: 6000453722439105074, guid: 4676b46aad8f7e8429d0c78d4bd6f9b2, type: 3}
+  weaponSound: {fileID: 8300000, guid: d65bd0015649902429ede7a366142f06, type: 3}
+  weaponSoundPitch: 0.7

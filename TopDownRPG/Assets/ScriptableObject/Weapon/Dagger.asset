@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f1c811cfdacb845834f29450bf40f2, type: 3}
   m_Name: Dagger
   m_EditorClassIdentifier: 
-  weaponDemage: 0.2
-  weaponSpeed: 0.2
+  weaponDemage: 0.3
+  weaponSpeed: 0.3
   weaponRange: 3
   weaponLife: 1
   weaponIcon: {fileID: 899042749, guid: 54d611a16eea5d849b825cd6a2bb51f3, type: 3}
   weaponName: Dagger
   weaponValue: 12
   weaponProject: {fileID: 6000453722439105074, guid: d72d5dd5ae5b3a14091e1effd8c419c4, type: 3}
+  weaponSound: {fileID: 8300000, guid: d65bd0015649902429ede7a366142f06, type: 3}
+  weaponSoundPitch: 1.8

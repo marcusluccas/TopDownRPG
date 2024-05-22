@@ -26,9 +26,11 @@ public class EntityStats : MonoBehaviour
 
     public GameObject deathParticle;
 
+    AudioSource hitSound;
+
     void Start()
     {
-
+        hitSound = GameObject.Find("Hit Sound").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -40,6 +42,8 @@ public class EntityStats : MonoBehaviour
     {
         if (hp <= 0)
         {
+            hitSound.volume = 1;
+
             if (this.gameObject.tag != "Player")
             {
                 InventoryManager.Instance.AddGold(goldCarry);
@@ -66,8 +70,12 @@ public class EntityStats : MonoBehaviour
 
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 
+        hitSound.volume = 0.4f;
+
         hp -= demage;
         Death();
+
+        hitSound.Play();
     }
 
     public void AddExp(int e)
