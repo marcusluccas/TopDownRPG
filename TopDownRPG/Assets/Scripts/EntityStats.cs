@@ -42,7 +42,7 @@ public class EntityStats : MonoBehaviour
     {
         if (hp <= 0)
         {
-            hitSound.volume = 1;
+            hitSound.volume = 1 * OptionsManager.instance.sliderVolume.value;
 
             if (this.gameObject.tag != "Player")
             {
@@ -70,7 +70,7 @@ public class EntityStats : MonoBehaviour
 
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 
-        hitSound.volume = 0.4f;
+        hitSound.volume = 0.4f * OptionsManager.instance.sliderVolume.value;
 
         hp -= demage;
         Death();

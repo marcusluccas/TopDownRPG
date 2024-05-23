@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             }
 
             myAnimator.Play("Move");
-            footstepSound.volume = 1;
+            footstepSound.volume = 1 * OptionsManager.instance.sliderVolume.value;
         }
         else
         {
