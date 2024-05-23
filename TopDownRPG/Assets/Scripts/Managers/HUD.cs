@@ -23,7 +23,7 @@ public class HUD : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(this);
         }
         else
         {
@@ -44,10 +44,13 @@ public class HUD : MonoBehaviour
 
     void PlayerHUD()
     {
-        myHpBar.maxValue = player.maxHp;
-        myHpBar.value = player.hp;
-        myExpBar.maxValue = player.level * 100;
-        myExpBar.value = player.exp;
+        if (player != null)
+        {
+            myHpBar.maxValue = player.maxHp;
+            myHpBar.value = player.hp;
+            myExpBar.maxValue = player.level * 100;
+            myExpBar.value = player.exp;
+        }
     }
 
     public void SelectStat(string stat)

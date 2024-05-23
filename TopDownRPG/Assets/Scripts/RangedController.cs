@@ -27,7 +27,7 @@ public class RangedController : MonoBehaviour
 
     void Shot()
     {
-        if (canAttack)
+        if (canAttack && player != null)
         {
             GameObject projectile = Instantiate(myProjectile, transform.position, Quaternion.identity);
             Vector2 directionProjectile = player.transform.position - transform.position;

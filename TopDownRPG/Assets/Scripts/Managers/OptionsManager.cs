@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,9 +17,9 @@ public class OptionsManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this.gameObject)
+        if (instance != null && instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(this);
         }
         else
         {

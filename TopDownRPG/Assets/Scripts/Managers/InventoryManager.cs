@@ -24,7 +24,7 @@ public class InventoryManager : MonoBehaviour
     void Awake()
     {
         if (Instance != null && Instance != this) {
-            Destroy(this.gameObject);
+            Destroy(this);
         }
         else {
             Instance = this;

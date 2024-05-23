@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EntityStats : MonoBehaviour
@@ -43,6 +44,11 @@ public class EntityStats : MonoBehaviour
         if (hp <= 0)
         {
             hitSound.volume = 1 * OptionsManager.instance.sliderVolume.value;
+
+            if (this.gameObject.tag == "Player")
+            {
+                SceneManager.LoadScene(0);
+            }
 
             if (this.gameObject.tag != "Player")
             {

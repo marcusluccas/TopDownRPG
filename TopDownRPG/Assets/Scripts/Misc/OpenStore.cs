@@ -26,21 +26,24 @@ public class OpenStore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, playerObject.transform.position);
-
-        if (distance < 2)
+        if (playerObject != null)
         {
-            storeWarning.SetActive(true);
+            float distance = Vector2.Distance(transform.position, playerObject.transform.position);
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (distance < 2)
             {
-                storeObject.SetActive(true);
+                storeWarning.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    storeObject.SetActive(true);
+                }
             }
-        }
-        else
-        {
-            storeWarning.SetActive(false);
-            storeObject.SetActive(false);
+            else
+            {
+                storeWarning.SetActive(false);
+                storeObject.SetActive(false);
+            }
         }
     }
 
